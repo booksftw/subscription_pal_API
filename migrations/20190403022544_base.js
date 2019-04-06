@@ -3,7 +3,7 @@ exports.up = function (knex, Promise) {
         .createTable('subscriptions', function (table) {
             table.increments('id').primary();
             table.string('name').notNullable();
-            table.string('amount');
+            table.integer('amount');
             table.string('image');
             table.string('linkToPage');
             table.boolean('status');
@@ -16,8 +16,8 @@ exports.up = function (knex, Promise) {
             table.date('createdAt');
         })
         .createTable('user_subscription', function (table) {
-            table.integer('user_id').unsigned().references('users.id');
             table.integer('subscription_id').unsigned().references('subscriptions.id')
+            table.date('createdAt');
         })
 };
 

@@ -3,6 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+const cors = require('cors');
 const knex = require('./util/database');
 
 const indexRouter = require('./routes/index');
@@ -10,6 +11,7 @@ const usersRouter = require('./routes/users');
 const subscriptionRouter = require('./routes/subscription');
 
 const app = express();
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
