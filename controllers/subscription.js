@@ -3,11 +3,9 @@
 const { Subscription, Invoice } = require("../models/models");
 
 exports.getSubscriptions = (req, res, next) => {
-  console.log("getting all subscriptions");
   const allSubscriptions = Subscription.fetchAll();
 
   allSubscriptions.then(subs => {
-    console.log('GET MY JSON SUBSCRIPTIONS')
     const subscriptions = subs.serialize()
     res.status(200).json({subscriptions})
   });
