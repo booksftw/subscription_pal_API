@@ -8,7 +8,6 @@
     "autoreload": "nodemon"
   },
   "dependencies": {
-    "bookshelf": "^0.14.2",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -16,6 +15,7 @@
     "knex": "^0.16.3",
     "moment": "^2.24.0",
     "morgan": "~1.9.0",
+    "objection": "^1.6.8",
     "pg": "^7.9.0",
     "pg-hstore": "^2.3.2"
   }
