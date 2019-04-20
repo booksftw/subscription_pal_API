@@ -2,10 +2,13 @@ const express = require("express");
 const router = express.Router();
 const subscriptionController = require("../controllers/subscription");
 
-/* GET susbscriptions. */
+/* READ/GET susbscriptions. */
 router.get("/", subscriptionController.getSubscriptions);
 
 // POST subscription
 router.post("/add", subscriptionController.addSubscription);
+
+// DELETE subscription
+router.post("/delete/:id", subscriptionController.deleteSubscription);
 
 module.exports = router;

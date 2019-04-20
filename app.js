@@ -3,7 +3,9 @@ const express = require("express");
 // Knex Query Builder and Objection ORM
 const Knex = require("knex");
 const knexDbConfig = require("./util/database");
+
 const { Model } = require("objection");
+const { Subscriptions } = require("./models/Subscription");
 
 // Middleware
 var bodyParser = require("body-parser");
@@ -20,8 +22,7 @@ const subscriptionRouter = require("./routes/subscription");
 const app = express();
 
 // Initialize knex.
-const knex = Knex(knexConfig.development);
-
+const knex = Knex(knexDbConfig.development);
 // Bind all Models to the knex instance. You only
 // need to do this once before you use any of
 // your model classes.

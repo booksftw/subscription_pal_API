@@ -12,7 +12,7 @@ exports.up = function(knex, Promise) {
     .createTable("users", function(table) {
       table.increments("id").primary();
       table.string("name");
-      table.integer("phone_number");
+      table.bigInteger("phone_number");
       table.string("email");
       table.string("notes");
       table.date("createdAt");
@@ -26,13 +26,15 @@ exports.up = function(knex, Promise) {
         .integer("user_id")
         .unsigned()
         .references("users.id");
+      table.date("payDate");
+      table.string("string");
       table.date("createdAt");
     });
 };
 
 exports.down = function(knex, Promise) {
   return knex.schema
-    .dropTable("user_subscription")
-    .dropTable("subscriptions")
-    .dropTable("users");
+    .dropTableIfExists("user_subscription")
+    .dropTableIfExists("subscriptions")
+    .dropTableIfExists("users");
 };
