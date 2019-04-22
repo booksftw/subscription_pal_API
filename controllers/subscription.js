@@ -8,7 +8,6 @@ exports.getSubscriptions = async (req, res, next) => {
 
 exports.addSubscription = async (req, res, next) => {
   const { name, amount, linkToPage, image, status } = req.body;
-  console.log(name, amount, status);
   const newSubscription = await Subscription.query().insert({
     name: name,
     amount: amount,

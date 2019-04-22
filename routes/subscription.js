@@ -9,6 +9,6 @@ router.get("/", subscriptionController.getSubscriptions);
 router.post("/add", subscriptionController.addSubscription);
 
 // DELETE subscription
-router.post("/delete/:id", subscriptionController.deleteSubscription);
+router.delete("/delete/:id", subscriptionController.deleteSubscription);
 
 module.exports = router;
